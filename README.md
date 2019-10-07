@@ -1,4 +1,4 @@
-# Project:
+# Project: Intention Timer
 
 ## Group Member Names: Nick and Grayson
 
