@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #2B2733;
+  font-family: 'Montserrat';
+  color: #CBC9CF;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: #46424D;
+  color: #CBC9CF;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+}
+
+#study-butt {
+  background-image: url('./assets/study.svg');
+  background-position: top;
+  background-size: 25px;
+}
+
+#meditate-butt {
+  background-image: url('./assets/meditate.svg');
+  background-position: top;
+  background-size: 25px;
+}
+
+#exercise-butt {
+  background-image: url('./assets/exercise.svg');
+  background-position: top;
+  background-size: 25px;
+}
+
+#study-in input:checked + #study-butt {
+  background-image: url('./assets/study-active.svg');
+  border: 2px #B3FD78 solid;
+}
+
+.cat-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cat-select input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.cat-butt {
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 2px #FFF solid;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  padding-top: 25px;
+  text-align: center;
+  width: 100px;
+}
+
+.form-time {
+  width: 95%;
+  background-color: #46424D;
+  color: #FFF;
+  padding: 50px 80px;
+  margin: auto;
+}
+
+#new-activity {
+  width: 70%;
+}
+
+#description label {
+  display: block;
+}
+
+#description input,
+#time-value input {
+  border: none;
+  border-bottom: 2px #FFF solid;
+  background: #46424D;
+}
+
+#time-value {
+  columns: 2;
+}
+
+#time-min label {
+  display: block;
+}
+
+#time-sec label {
+  display: block;
+}
+
+#description input {
+  width: 100%;
+}
+
+#prev-activity {
+  width: 30%;
+}
+
+section {
+  border: 2px orange solid;
+  height: 100vh;
+  padding-top: 20px;
+  margin: 1px;
+}
+
+section h3 {
+  padding: 14px;
+}
+
+div {
+  border: 2px green dashed;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intention Timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Intention Timer</h1>
+  </header>
+  <main>
+    <section id="new-activity">
+      <h3>New Activity</h3>
+      <form action="submit" class="form-time">
+        <div>
+          <label>Select a Category:</label>
+          <div class="cat-select">
+            <input id="study-in" type="radio" name="study-butt" value="study" />
+            <label id="study-butt" class="cat-butt" for="study">Study</label>
+            <input id="meditate-in" type="radio" name="meditate-butt" value="meditate" />
+            <label id="meditate-butt" class="cat-butt" for="meditate">Meditate</label>
+            <input id="exercise-in" type="radio" name="exercise-butt" value="exercise" />
+            <label id="exercise-butt" class="cat-butt" for="exercise">Exercise</label>
+          </div>
+        <div id="description">
+          <label for="description">What would you like to accomplish during this time?</label>
+          <input type="text"></input>
+        </div>
+        <div id="time-value">
+          <div id=#time-min>
+            <label for="min">Minutes</label>
+            <input type="text"></input>
+          </div>
+          <div id="time-sec">
+            <label for="sec">Seconds</label>
+            <input type="text"></input>
+          </div>
+        </div>
+        <button id="start-activity" type="submit">Start Activity</button>
+      </form>
+    </section>
+    <!-- <section class="form-time" id="timer-box">
+
+    </section> -->
+    <section id="prev-activity">
+      <h3>Previous Activities</h3>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
