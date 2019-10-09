@@ -7,8 +7,8 @@ var startActivity = document.querySelector('#start-activity');
 var minVal = document.querySelector('#min-val');
 var secVal = document.querySelector('#sec-val');
 var invalidChars = ["e", "."];
-var newActivity = querySelector('#new-activity');
-var timerBox = querySelector('#timer-box');
+var newActivity = document.querySelector('#new-activity');
+var timerBox = document.querySelector('#timer-box');
 
 studyBtn.addEventListener('click', toggleStudy);
 meditateBtn.addEventListener('click', toggleMeditate);
