@@ -1,3 +1,5 @@
+/* ********** GLOBAL ********** */
+
 *,
 *::before,
 *::after {
@@ -12,9 +14,29 @@ html {
   color: #CBC9CF;
 }
 
+.hidden {
+  display: none;
+}
+
+.reveal {
+  display: inline;
+}
+
+div {
+  border: 2px green dashed;
+}
+
+.warning {
+  width: 15px;
+}
+
+/* ********** BODY ********** */
+
 body {
   margin: 0;
 }
+
+/* ********** HEADER ********** */
 
 header {
   background-color: #46424D;
@@ -28,13 +50,38 @@ header h1 {
   text-transform: uppercase;
 }
 
+/* ********** MAIN ********** */
+
 main {
   display: flex;
 }
 
-/* section {
-  
-} */
+section {
+  border: 2px orange solid;
+  height: 100vh;
+  padding-top: 20px;
+  margin: 1px;
+}
+
+section h3 {
+  padding: 14px;
+}
+
+/* ********** NEW-ACTIVITY FORM ********** */
+
+#new-activity,
+#timer-box {
+  width:70%;
+}
+
+.form-time {
+  width: 95%;
+  height: 80%;
+  background-color: #46424D;
+  color: #FFF;
+  padding: 60px 120px;
+  margin: auto;
+}
 
 .btn-wrapper {
   display: flex;
@@ -51,7 +98,7 @@ main {
 }
 
 .study-off {
-  width: 100px;
+  width: 130px;
   background-image: url('./assets/study.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -61,7 +108,7 @@ main {
 }
 
 .study-on {
-  width: 100px;
+  width: 130px;
   color: #B3FD78;
   border: 2px #B3FD78 solid;
   background-image: url('./assets/study-active.svg');
@@ -73,7 +120,7 @@ main {
 }
 
 .meditate-off {
-  width: 100px;
+  width: 130px;
   background-image: url('./assets/meditate.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -83,7 +130,7 @@ main {
 }
 
 .meditate-on {
-  width: 100px;
+  width: 130px;
   color: #C278FD;
   border: 2px #C278FD solid;
   background-image: url('./assets/meditate-active.svg');
@@ -95,7 +142,7 @@ main {
 }
 
 .exercise-off {
-  width: 100px;
+  width: 130px;
   background-image: url('./assets/exercise.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -105,7 +152,7 @@ main {
 }
 
 .exercise-on {
-  width: 100px;
+  width: 130px;
   color: #FD8078;
   border: 2px #FD8078 solid;
   background-image: url('./assets/exercise-active.svg');
@@ -116,59 +163,8 @@ main {
   padding-top: 20px;
 }
 
-.hidden {
-  display: none;
-}
-
-.reveal {
-  display: inline;
-}
-
-#warning {
-  width: 15px;
-}
-
-.cat-select {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.cat-select input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.cat-butt {
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: 2px #FFF solid;
-  border-radius: 3px;
-  cursor: pointer;
-  display: inline-block;
-  height: 50px;
-  padding-top: 25px;
-  text-align: center;
-  width: 100px;
-}
-
-.form-time {
-  width: 95%;
-  height: 80%;
-  background-color: #46424D;
-  color: #FFF;
-  padding: 50px 80px;
-  margin: auto;
-}
-
-#new-activity,
-#timer-box {
-  width:70%;
-}
-
-#description label {
-  display: block;
+#time-value {
+  columns: 2;
 }
 
 #description input,
@@ -178,37 +174,12 @@ main {
   background: #46424D;
 }
 
-#time-value {
-  columns: 2;
-}
-
-#time-min label {
-  display: block;
-}
-
-#time-sec label {
-  display: block;
-}
-
 #description input {
   width: 100%;
 }
 
+/* ********** PREV-ACTIVITY ********** */
+
 #prev-activity {
   width: 30%;
-}
-
-section {
-  border: 2px orange solid;
-  height: 100vh;
-  padding-top: 20px;
-  margin: 1px;
-}
-
-section h3 {
-  padding: 14px;
-}
-
-div {
-  border: 2px green dashed;
 }
