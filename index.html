@@ -11,39 +11,51 @@
     <h1>Intention Timer</h1>
   </header>
   <main>
-    <section id="new-activity">
+    <section class="reveal" id="new-activity">
       <h3>New Activity</h3>
       <form action="submit" class="form-time">
-        <div>
-          <label>Select a Category:</label>
-          <div class="cat-select">
-            <input id="study-in" type="radio" name="study-butt" value="study" />
-            <label id="study-butt" class="cat-butt" for="study">Study</label>
-            <input id="meditate-in" type="radio" name="meditate-butt" value="meditate" />
-            <label id="meditate-butt" class="cat-butt" for="meditate">Meditate</label>
-            <input id="exercise-in" type="radio" name="exercise-butt" value="exercise" />
-            <label id="exercise-butt" class="cat-butt" for="exercise">Exercise</label>
+        <label>Select a Category:</label>
+        <div class="btn-wrapper">
+          <div class="cat-button study-off" id="study-btn">
+            <p>Study</p>
           </div>
+          <div class="cat-button meditate-off" id="meditate-btn">
+            <p>Meditate</p>
+          </div>
+          <div class="cat-button exercise-off" id="exercise-btn">
+            <p>Exercise</p>
+          </div>
+          <!-- <div class="cat-button study-on">
+              <p>Study</p>
+          </div> -->
+        </div>
         <div id="description">
           <label for="description">What would you like to accomplish during this time?</label>
-          <input type="text"></input>
+          <input type="text" id="desc-field"></input>
+          <p class="hidden" id="desc-error"><img id="warning" src="./assets/warning.svg" alt="warning"> A description is required.</p>
         </div>
         <div id="time-value">
           <div id=#time-min>
             <label for="min">Minutes</label>
-            <input type="text"></input>
+            <input id="min-val" type="number" min="0"></input>
+            <p class="hidden" id="min-error"><img id="warning" src="./assets/warning.svg" alt="warning"> A minute value is required.</p>
           </div>
           <div id="time-sec">
             <label for="sec">Seconds</label>
-            <input type="text"></input>
+            <input id="sec-val" type="number" min="0"></input>
+            <p class="hidden" id="sec-error"><img id="warning" src="./assets/warning.svg" alt="warning"> A second value is required.</p>
           </div>
         </div>
-        <button id="start-activity" type="submit">Start Activity</button>
+        <button id="start-activity" type="button">Start Activity</button>
       </form>
     </section>
-    <!-- <section class="form-time" id="timer-box">
-
-    </section> -->
+    <section class="hidden" id="timer-box">
+      <h3>Current Activity</h3>
+      <div>
+        <h4><span>Activity Description</span></h4>
+        <p><span>05:00</span></p>
+      </div>
+    </section>
     <section id="prev-activity">
       <h3>Previous Activities</h3>
     </section>

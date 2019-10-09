@@ -32,27 +32,100 @@ main {
   display: flex;
 }
 
-#study-butt {
+/* section {
+  
+} */
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cat-button {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  border: 2px #FFF solid;
+  height: 50px;
+  width: 100px;
+}
+
+.study-off {
+  width: 100px;
   background-image: url('./assets/study.svg');
-  background-position: top;
+  background-repeat: no-repeat;
   background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
 }
 
-#meditate-butt {
-  background-image: url('./assets/meditate.svg');
-  background-position: top;
-  background-size: 25px;
-}
-
-#exercise-butt {
-  background-image: url('./assets/exercise.svg');
-  background-position: top;
-  background-size: 25px;
-}
-
-#study-in input:checked + #study-butt {
-  background-image: url('./assets/study-active.svg');
+.study-on {
+  width: 100px;
+  color: #B3FD78;
   border: 2px #B3FD78 solid;
+  background-image: url('./assets/study-active.svg');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.meditate-off {
+  width: 100px;
+  background-image: url('./assets/meditate.svg');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.meditate-on {
+  width: 100px;
+  color: #C278FD;
+  border: 2px #C278FD solid;
+  background-image: url('./assets/meditate-active.svg');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.exercise-off {
+  width: 100px;
+  background-image: url('./assets/exercise.svg');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.exercise-on {
+  width: 100px;
+  color: #FD8078;
+  border: 2px #FD8078 solid;
+  background-image: url('./assets/exercise-active.svg');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: top;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.reveal {
+  display: inline;
+}
+
+#warning {
+  width: 15px;
 }
 
 .cat-select {
@@ -82,14 +155,16 @@ main {
 
 .form-time {
   width: 95%;
+  height: 80%;
   background-color: #46424D;
   color: #FFF;
   padding: 50px 80px;
   margin: auto;
 }
 
-#new-activity {
-  width: 70%;
+#new-activity,
+#timer-box {
+  width:70%;
 }
 
 #description label {
