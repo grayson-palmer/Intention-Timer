@@ -178,8 +178,15 @@ section h3 {
   width: 100%;
 }
 
+#start-button {
+  padding: 100px;
+  border: 2px green solid;
+  border-radius: 50%;
+}
+
 /* ********** PREV-ACTIVITY ********** */
 
 #prev-activity {
   width: 30%;
 }
+

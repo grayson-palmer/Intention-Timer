@@ -2,7 +2,7 @@ var studyBtn = document.querySelector('#study-btn');
 var meditateBtn = document.querySelector('#meditate-btn');
 var exerciseBtn = document.querySelector('#exercise-btn');
 var descField = document.querySelector('#desc-field');
-var descFieldTwo = document.querySelector(".descFieldTwo");
+var timerDesc = document.querySelector('#timer-desc');
 var catError = document.querySelector('#cat-error');
 var descError = document.querySelector('#desc-error');
 var minError = document.querySelector('#min-error');
@@ -15,7 +15,12 @@ var secValTwo = document.querySelector('#secValTwo');
 var invalidChars = ["e", "."];
 var newActivity = document.querySelector('#new-activity');
 var timerBox = document.querySelector('#timer-box');
+var timerDisplay = document.querySelector('#timer-display');
 var category = '';
+var timeLeft = 0;
+var timerVal = document.querySelector('#timer-val');
+var interval;
+var startButton = document.querySelector('#start-button');
 
 
 studyBtn.addEventListener('click', toggleStudy);
@@ -24,6 +29,7 @@ exerciseBtn.addEventListener('click', toggleExercise);
 startActivity.addEventListener('click', submit);
 minVal.addEventListener('keydown', charCheck);
 secVal.addEventListener('keydown', charCheck);
+startButton.addEventListener('click', countdown);
 
 function toggleStudy() {
   if (studyBtn.classList.contains('study-off')) { 
@@ -122,10 +128,10 @@ function submit() {
   newActivity.classList.add('hidden');
   timerBox.classList.remove('hidden');
   timerBox.classList.add('reveal');
-  descFieldTwo.innerText = descField.value;
-  minValTwo.innerText = minVal.value;
-  secValTwo.innerText = secVal.value;
-  // minVal.value + secVal.value 
+  timerDesc.innerText = descField.value;
+  var minPres = minVal.value < 10 ? "0" + minVal.value : minVal.value;
+  var secPres = secVal.value < 10 ? "0" + secVal.value : secVal.value;
+  timerDisplay.innerText = minPres + ":" + secPres;
   } 
 }
 
@@ -135,6 +141,50 @@ function charCheck(e) {
   }
 }
 
+// ********** TIMER LOGIC ***********
 
+function convertSec(mVal, sVal) {
+  console.log(mVal);
+  console.log(sVal);
+  var sec = parseInt(Math.floor(mVal * 60)) + parseInt(sVal);
+  timeLeft = sec;
+  console.log(timeLeft);
+}
 
-// minval.input.value = span.input.value
+function timerAppearance(s) {
+  var min = Math.floor(s / 60);
+  var sec = s % 60;
+  var minPres = 0;
+  var secPres = 0;
+  minPres = min < 10 ? "0" + min : min;
+  secPres = sec < 10 ? "0" + sec : sec;
+  // if (min < 10) {
+  //   minPres = "0" + min;
+  // }
+  // else {
+  //   minPres = min;
+  // };
+  // if (sec < 10) {
+  //   secPres = "0" + sec;
+  // }
+  // else {
+  //   secPres = sec;
+  // };
+  return minPres + ":" + secPres;
+};
+
+function timerLogic() {
+  timeLeft--;
+  timerDisplay.innerText = timerAppearance(timeLeft);
+  if (timeLeft < 0) {
+    alert("TIMER IS DONE!");
+    clearInterval(interval);
+    timerDisplay.innerText = "00:00";
+    };
+  };
+
+function countdown() {
+  convertSec(minVal.value, secVal.value);
+  interval = setInterval(timerLogic, 1000);
+};
+
