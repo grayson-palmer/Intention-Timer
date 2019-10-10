@@ -2,13 +2,21 @@ var studyBtn = document.querySelector('#study-btn');
 var meditateBtn = document.querySelector('#meditate-btn');
 var exerciseBtn = document.querySelector('#exercise-btn');
 var descField = document.querySelector('#desc-field');
+var descFieldTwo = document.querySelector(".descFieldTwo");
+var catError = document.querySelector('#cat-error');
 var descError = document.querySelector('#desc-error');
+var minError = document.querySelector('#min-error');
+var secError = document.querySelector('#sec-error');
 var startActivity = document.querySelector('#start-activity');
 var minVal = document.querySelector('#min-val');
+var minValTwo = document.querySelector('#minValTwo');
 var secVal = document.querySelector('#sec-val');
+var secValTwo = document.querySelector('#secValTwo');
 var invalidChars = ["e", "."];
 var newActivity = document.querySelector('#new-activity');
 var timerBox = document.querySelector('#timer-box');
+var category = '';
+
 
 studyBtn.addEventListener('click', toggleStudy);
 meditateBtn.addEventListener('click', toggleMeditate);
@@ -66,42 +74,59 @@ function validateDesc() {
   if (descField.value === '') {
     descError.classList.remove('hidden');
     descError.classList.add('reveal');
+    return false;
   }
 }
 
 function validateMin() {
   if (minVal.value === '') {
-    //Set var and class list for error
+    minError.classList.remove('hidden');
+    minError.classList.add('reveal');
+    return false;
   }
 }
 
 function validateSec() {
   if (secVal.value === '') {
-    //Set var and class list for error
+    secError.classList.remove('hidden');
+    secError.classList.add('reveal');
+    return false;
   }
 }
 
-// function validate() {
-//   if (descField.value === '') {
-//     descError.classList.remove('hidden');
-//     descError.classList.add('reveal');
-//   }
-//   else if (minVal.value === '') {
-//     alert('A minute value is required');
-//   }
-//   else if (secVal.value === '') {
-//     alert('A second value is required');
-//   }
-//   return true;
-// }
+function validateCat() {
+  if (studyBtn.classList.contains('study-on') || 
+  meditateBtn.classList.contains('meditate-on') ||
+  exerciseBtn.classList.contains('exercise-on')) {
+    return true;
+  } else {
+    catError.classList.remove('hidden');
+    catError.classList.add('reveal');
+    return false;
+  }
+}
+
+function validateAll() {
+    if (validateDesc() === true ||
+    validateMin() === true ||
+    validateSec() === true ||
+    validateCat() === true)
+    {
+    return true;
+    }
+  }
 
 function submit() {
-  if (validate().value === true) {
+  if (validateAll() === true) {
   newActivity.classList.remove('reveal');
   newActivity.classList.add('hidden');
   timerBox.classList.remove('hidden');
   timerBox.classList.add('reveal');
-  }
+  descFieldTwo.innerText = descField.value;
+  minValTwo.innerText = minVal.value;
+  secValTwo.innerText = secVal.value;
+  // minVal.value + secVal.value 
+  } 
 }
 
 function charCheck(e) {
@@ -110,3 +135,6 @@ function charCheck(e) {
   }
 }
 
+
+
+// minval.input.value = span.input.value
