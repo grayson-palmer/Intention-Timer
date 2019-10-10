@@ -14,7 +14,7 @@
     <section class="reveal" id="new-activity">
       <h3>New Activity</h3>
       <form action="submit" class="form-time">
-        <label>Select a Category:</label>
+        <label>Select a Category:<p class="hidden" id="cat-error"><img class="warning" src="./assets/warning.svg" alt="warning"> Please select a category</p></label>
         <div class="btn-wrapper">
           <div class="cat-button study-off" id="study-btn">
             <p>Study</p>
@@ -35,12 +35,12 @@
           <div id=#time-min>
             <label for="min">Minutes</label>
             <input id="min-val" type="number" min="0"></input>
-            <p class="hidden" id="min-error"><img id="warning" src="./assets/warning.svg" alt="warning"> A minute value is required.</p>
+            <p class="hidden" id="min-error"><img class="warning" src="./assets/warning.svg" alt="warning"> A minute value is required.</p>
           </div>
           <div id="time-sec">
             <label for="sec">Seconds</label>
             <input id="sec-val" type="number" min="0"></input>
-            <p class="hidden" id="sec-error"><img id="warning" src="./assets/warning.svg" alt="warning"> A second value is required.</p>
+            <p class="hidden" id="sec-error"><img class="warning" src="./assets/warning.svg" alt="warning"> A second value is required.</p>
           </div>
         </div>
         <button id="start-activity" type="button">Start Activity</button>
@@ -49,8 +49,8 @@
     <section class="hidden" id="timer-box">
       <h3>Current Activity</h3>
       <div>
-        <h4><span>Activity Description</span></h4>
-        <p><span>05:00</span></p>
+        <h4><span class="descFieldTwo">Activity Description</span></h4>
+        <p><span id="minValTwo">00</span>:<span id="secValTwo">00</span></p>
       </div>
     </section>
     <section id="prev-activity">
