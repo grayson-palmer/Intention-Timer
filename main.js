@@ -21,6 +21,7 @@ var timeLeft = 0;
 var timerVal = document.querySelector('#timer-val');
 var interval;
 var startButton = document.querySelector('#start-button');
+ 
 
 
 studyBtn.addEventListener('click', toggleStudy);
@@ -80,7 +81,7 @@ function validateDesc() {
   if (descField.value === '') {
     descError.classList.remove('hidden');
     descError.classList.add('reveal');
-    return false;
+    return true;
   }
 }
 
@@ -88,7 +89,7 @@ function validateMin() {
   if (minVal.value === '') {
     minError.classList.remove('hidden');
     minError.classList.add('reveal');
-    return false;
+    return true;
   }
 }
 
@@ -96,7 +97,7 @@ function validateSec() {
   if (secVal.value === '') {
     secError.classList.remove('hidden');
     secError.classList.add('reveal');
-    return false;
+    return true;
   }
 }
 
@@ -108,18 +109,17 @@ function validateCat() {
   } else {
     catError.classList.remove('hidden');
     catError.classList.add('reveal');
-    return false;
   }
 }
 
 function validateAll() {
-    if (validateDesc() === true ||
-    validateMin() === true ||
-    validateSec() === true ||
-    validateCat() === true)
+    if ((validateCat() === true) ||
+    (validateDesc() === true) ||
+    (validateMin() === true) ||
+    (validateSec() === true))
     {
     return true;
-    }
+    } else {return false;}
   }
 
 function submit() {
@@ -132,6 +132,7 @@ function submit() {
   var minPres = minVal.value < 10 ? "0" + minVal.value : minVal.value;
   var secPres = secVal.value < 10 ? "0" + secVal.value : secVal.value;
   timerDisplay.innerText = minPres + ":" + secPres;
+  startButtonColor();
   } 
 }
 
@@ -188,3 +189,14 @@ function countdown() {
   interval = setInterval(timerLogic, 1000);
 };
 
+function startButtonColor() {
+  if (studyBtn.classList.contains('study-on')) {
+    startButton.classList.add('start-btn-study');
+  }
+  if (meditateBtn.classList.contains('meditate-on')) {
+    startButton.classList.add('start-btn-meditate');
+  }
+  if (exerciseBtn.classList.contains('exercise-on')) {
+    startButton.classList.add('start-btn-exercise');
+  }
+};
