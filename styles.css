@@ -9,7 +9,7 @@
 }
 
 html {
-  background-color: #2B2733;
+  background-color: #46424d;
   font-family: 'Montserrat';
   color: #CBC9CF;
 }
@@ -22,12 +22,9 @@ html {
   display: inline;
 }
 
-div {
-  border: 2px green dashed;
-}
-
 .warning {
   width: 15px;
+  color: #EFB7EC; 
 }
 
 /* ********** BODY ********** */
@@ -57,7 +54,6 @@ main {
 }
 
 section {
-  border: 2px orange solid;
   height: 100vh;
   padding-top: 20px;
   margin: 1px;
@@ -65,17 +61,23 @@ section {
 
 section h3 {
   padding: 14px;
+  font-size: 26px;
 }
 
 /* ********** NEW-ACTIVITY FORM ********** */
 
-#new-activity,
-#timer-box {
-  width:70%;
+#new-activity {
+  background-color: #2b2733;
+  width: 70%;
 }
 
 .form-time {
-  width: 95%;
+  box-shadow: 10px 10px 5px #26222d;
+  font-size: 18px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  width: 90%;
   height: 80%;
   background-color: #46424D;
   color: #FFF;
@@ -85,20 +87,26 @@ section h3 {
 
 .btn-wrapper {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
+.btn-wrapper label {
+  margin: 10px 0px;
+  width: 100%;
+}
+
 .cat-button {
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
   border: 2px #FFF solid;
-  height: 50px;
-  width: 100px;
+  height: 65px;
+  width: 155px;
 }
 
 .study-off {
-  width: 130px;
   background-image: url('./assets/study.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -108,7 +116,7 @@ section h3 {
 }
 
 .study-on {
-  width: 130px;
+ 
   color: #B3FD78;
   border: 2px #B3FD78 solid;
   background-image: url('./assets/study-active.svg');
@@ -120,7 +128,6 @@ section h3 {
 }
 
 .meditate-off {
-  width: 130px;
   background-image: url('./assets/meditate.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -130,7 +137,6 @@ section h3 {
 }
 
 .meditate-on {
-  width: 130px;
   color: #C278FD;
   border: 2px #C278FD solid;
   background-image: url('./assets/meditate-active.svg');
@@ -142,7 +148,6 @@ section h3 {
 }
 
 .exercise-off {
-  width: 130px;
   background-image: url('./assets/exercise.svg');
   background-repeat: no-repeat;
   background-size: 25px;
@@ -152,7 +157,6 @@ section h3 {
 }
 
 .exercise-on {
-  width: 130px;
   color: #FD8078;
   border: 2px #FD8078 solid;
   background-image: url('./assets/exercise-active.svg');
@@ -165,28 +169,104 @@ section h3 {
 
 #time-value {
   columns: 2;
-}
-
-#description input,
-#time-value input {
-  border: none;
-  border-bottom: 2px #FFF solid;
-  background: #46424D;
-}
-
-#description input {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 
+#desc-field,
+#time-value input {
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px #FFF solid;
+  background: #46424D;
+
+}
+#time-value input {
+  width: 250px;
+}
+
+#desc-field {
+  width: 100%;
+}
+
+#start-activity {
+  border-radius: 5px;
+  color: #2b2733;
+  align-self: flex-end;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+}
+
+/* ********** TIMER BOX ********** */
+
 #start-button {
   padding: 100px;
-  border: 2px green solid;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin-top: 50px;
 }
+
+.start-btn-study {
+  border: 4px #b3fd78 solid;
+
+}
+.start-btn-meditate {
+  border: 4px #c278fd solid;
+}
+
+.start-btn-exercise {
+  border: 4px #fd8078 solid;
+}
+
+#timer-box {
+  background-color: #2b2733;
+  width: 60%;
+
+}
+
+#timer-info {
+  box-shadow: 10px 10px 5px #26222d;
+  background-color: #46424D;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+}
+
+#timer-display {
+  font-size: 80px;
+  font-weight: 800;
+}
+
 
 /* ********** PREV-ACTIVITY ********** */
 
 #prev-activity {
-  width: 30%;
+  background-color: #2b2733;
+  width: 40%;
+  margin-left: 2px;
 }
+#prev-activity-text {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 20px;
 
+}
+#prev-activity-text p {
+  margin: 5px;
+}

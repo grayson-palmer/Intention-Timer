@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Intention Timer</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400, 800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -14,8 +14,9 @@
     <section class="reveal" id="new-activity">
       <h3>New Activity</h3>
       <form action="submit" class="form-time">
-        <label>Select a Category:<p class="hidden" id="cat-error"><img class="warning" src="./assets/warning.svg" alt="warning"> Please select a category</p></label>
+        <!-- <label>Select a Category:<p class="hidden" id="cat-error"><img class="warning" src="./assets/warning.svg" alt="warning"> Please select a category</p></label> -->
         <div class="btn-wrapper">
+          <label>Select a Category:<p class="hidden" id="cat-error"><img class="warning" src="./assets/warning.svg" alt="warning"> Please select a category</p></label>
           <div class="cat-button study-off" id="study-btn">
             <p>Study</p>
           </div>
@@ -48,7 +49,7 @@
     </section>
     <section class="hidden" id="timer-box">
       <h3>Current Activity</h3>
-      <div>
+      <div id="timer-info">
         <h4 id="timer-desc">Activity Description</h4>
         <p id="timer-display"></p>
         <div id="start-button">START!</div>
@@ -56,6 +57,10 @@
     </section>
     <section id="prev-activity">
       <h3>Previous Activities</h3>
+      <div id="prev-activity-text">
+        <p>You haven't logged any acvitivites yet.</p>
+        <p>Complete the form to the left to get started!</p>
+      </div>
     </section>
   </main>
   <script src="main.js"></script>
