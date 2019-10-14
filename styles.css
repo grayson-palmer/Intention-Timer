@@ -10,8 +10,8 @@
 
 html {
   background-color: #46424d;
-  font-family: 'Montserrat';
   color: #CBC9CF;
+  font-family: 'Montserrat';
 }
 
 .hidden {
@@ -38,9 +38,9 @@ body {
 header {
   background-color: #46424D;
   color: #CBC9CF;
-  text-align: center;
   font-size: 12px;
   padding: 10px;
+  text-align: center;
 }
 
 header h1 {
@@ -55,13 +55,13 @@ main {
 
 section {
   height: 100vh;
-  padding-top: 20px;
   margin: 1px;
+  padding-top: 20px;
 }
 
 section h3 {
-  padding: 14px;
   font-size: 26px;
+  padding: 14px;
 }
 
 /* ********** NEW-ACTIVITY FORM ********** */
@@ -72,17 +72,17 @@ section h3 {
 }
 
 .form-time {
+  background-color: #46424D;
   box-shadow: 10px 10px 5px #26222d;
-  font-size: 18px;
+  color: #FFF;
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
-  width: 90%;
+  font-size: 18px;
   height: 80%;
-  background-color: #46424D;
-  color: #FFF;
-  padding: 60px 120px;
+  justify-content: space-between;
   margin: auto;
+  padding: 60px 120px;
+  width: 90%;
 }
 
 .btn-wrapper {
@@ -98,73 +98,72 @@ section h3 {
 
 .cat-button {
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  flex-flow: column wrap;
   border: 2px #FFF solid;
+  display: flex;
+  flex-flow: column wrap;
   height: 65px;
+  justify-content: center;
   width: 155px;
 }
 
 .study-off {
   background-image: url('./assets/study.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
   padding-top: 20px;
+  text-align: center;
 }
 
 .study-on {
- 
-  color: #B3FD78;
-  border: 2px #B3FD78 solid;
   background-image: url('./assets/study-active.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
+  border: 2px #B3FD78 solid;
+  color: #B3FD78;
   padding-top: 20px;
+  text-align: center;
 }
 
 .meditate-off {
   background-image: url('./assets/meditate.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
   padding-top: 20px;
+  text-align: center;
 }
 
 .meditate-on {
-  color: #C278FD;
-  border: 2px #C278FD solid;
   background-image: url('./assets/meditate-active.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
+  border: 2px #C278FD solid;
+  color: #C278FD;
   padding-top: 20px;
+  text-align: center;
 }
 
 .exercise-off {
   background-image: url('./assets/exercise.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
   padding-top: 20px;
+  text-align: center;
 }
 
 .exercise-on {
-  color: #FD8078;
-  border: 2px #FD8078 solid;
   background-image: url('./assets/exercise-active.svg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: top;
-  text-align: center;
+  border: 2px #FD8078 solid;
+  color: #FD8078;
   padding-top: 20px;
+  text-align: center;
 }
 
 #time-value {
@@ -176,17 +175,17 @@ section h3 {
 
 #desc-field,
 #time-value input {
+  background: #46424D;
+  border: none;
+  border-bottom: 2px #FFF solid;
   color: #FFF;
   display: flex;
-  justify-content: space-between;
   font-family: 'Montserrat';
   font-size: 18px;
   height: 40px;
-  border: none;
-  border-bottom: 2px #FFF solid;
-  background: #46424D;
-
+  justify-content: space-between;
 }
+
 #time-value input {
   width: 250px;
 }
@@ -196,30 +195,30 @@ section h3 {
 }
 
 #start-activity {
+  align-self: flex-end;
   border-radius: 5px;
   color: #2b2733;
-  align-self: flex-end;
   font-family: 'Montserrat';
   font-size: 20px;
-  width: 200px;
   height: 40px;
+  width: 200px;
 }
 
 /* ********** TIMER BOX ********** */
 
 #start-button {
-  padding: 100px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  width: 30%;
   margin-top: 50px;
+  padding: 100px;
+  width: 30%;
 }
 
 .start-btn-study {
   border: 4px #b3fd78 solid;
-
 }
+
 .start-btn-meditate {
   border: 4px #c278fd solid;
 }
@@ -231,20 +230,19 @@ section h3 {
 #timer-box {
   background-color: #2b2733;
   width: 60%;
-
 }
 
 #timer-info {
-  box-shadow: 10px 10px 5px #26222d;
+  align-items: center;
   background-color: #46424D;
+  box-shadow: 10px 10px 5px #26222d;
   display: flex;
   flex-flow: column nowrap;
   font-size: 22px;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
   height: 80%;
+  justify-content: center;
   margin: auto;
+  width: 90%;
 }
 
 #timer-display {
@@ -257,16 +255,17 @@ section h3 {
 
 #prev-activity {
   background-color: #2b2733;
-  width: 40%;
   margin-left: 2px;
+  width: 40%;
 }
+
 #prev-activity-text {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: 20px;
-
 }
+
 #prev-activity-text p {
   margin: 5px;
 }
