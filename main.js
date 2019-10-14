@@ -1,36 +1,36 @@
-var studyBtn = document.querySelector('#study-btn');
-var meditateBtn = document.querySelector('#meditate-btn');
-var exerciseBtn = document.querySelector('#exercise-btn');
-var descField = document.querySelector('#desc-field');
-var timerDesc = document.querySelector('#timer-desc');
 var catError = document.querySelector('#cat-error');
+var category = '';
 var descError = document.querySelector('#desc-error');
+var descField = document.querySelector('#desc-field');
+var exerciseBtn = document.querySelector('#exercise-btn');
+var interval;
+var invalidChars = ["e", "."];
+var meditateBtn = document.querySelector('#meditate-btn');
 var minError = document.querySelector('#min-error');
-var secError = document.querySelector('#sec-error');
-var startActivity = document.querySelector('#start-activity');
 var minVal = document.querySelector('#min-val');
 var minValTwo = document.querySelector('#minValTwo');
+var newActivity = document.querySelector('#new-activity');
+var secError = document.querySelector('#sec-error');
 var secVal = document.querySelector('#sec-val');
 var secValTwo = document.querySelector('#secValTwo');
-var invalidChars = ["e", "."];
-var newActivity = document.querySelector('#new-activity');
-var timerBox = document.querySelector('#timer-box');
-var timerDisplay = document.querySelector('#timer-display');
-var category = '';
-var timeLeft = 0;
-var timerVal = document.querySelector('#timer-val');
-var interval;
+var startActivity = document.querySelector('#start-activity');
 var startButton = document.querySelector('#start-button');
+var studyBtn = document.querySelector('#study-btn');
+var timeLeft = 0;
+var timerBox = document.querySelector('#timer-box');
+var timerDesc = document.querySelector('#timer-desc');
+var timerDisplay = document.querySelector('#timer-display');
+var timerVal = document.querySelector('#timer-val');
  
 
-
-studyBtn.addEventListener('click', toggleStudy);
-meditateBtn.addEventListener('click', toggleMeditate);
 exerciseBtn.addEventListener('click', toggleExercise);
-startActivity.addEventListener('click', submit);
+meditateBtn.addEventListener('click', toggleMeditate);
 minVal.addEventListener('keydown', charCheck);
 secVal.addEventListener('keydown', charCheck);
+startActivity.addEventListener('click', submit);
 startButton.addEventListener('click', countdown);
+studyBtn.addEventListener('click', toggleStudy);
+
 
 function toggleStudy() {
   if (studyBtn.classList.contains('study-off')) { 
@@ -81,24 +81,21 @@ function validateDesc() {
   if (descField.value === '') {
     descError.classList.remove('hidden');
     descError.classList.add('reveal');
-    return true;
-  }
+  } else {return true;}
 }
 
 function validateMin() {
   if (minVal.value === '') {
     minError.classList.remove('hidden');
     minError.classList.add('reveal');
-    return true;
-  }
+  } else {return true;}
 }
 
 function validateSec() {
   if (secVal.value === '') {
     secError.classList.remove('hidden');
     secError.classList.add('reveal');
-    return true;
-  }
+  } else {return true;}
 }
 
 function validateCat() {
@@ -112,11 +109,19 @@ function validateCat() {
   }
 }
 
+function validateBulk() {
+  validateCat();
+  validateDesc();
+  validateMin();
+  validateSec();
+}
+
 function validateAll() {
-    if ((validateCat() === true) ||
-    (validateDesc() === true) ||
-    (validateMin() === true) ||
-    (validateSec() === true))
+  validateBulk();
+    if (validateCat() === true &&
+    validateDesc() === true &&
+    validateMin() === true &&
+    validateSec() === true)
     {
     return true;
     } else {return false;}
@@ -159,18 +164,6 @@ function timerAppearance(s) {
   var secPres = 0;
   minPres = min < 10 ? "0" + min : min;
   secPres = sec < 10 ? "0" + sec : sec;
-  // if (min < 10) {
-  //   minPres = "0" + min;
-  // }
-  // else {
-  //   minPres = min;
-  // };
-  // if (sec < 10) {
-  //   secPres = "0" + sec;
-  // }
-  // else {
-  //   secPres = sec;
-  // };
   return minPres + ":" + secPres;
 };
 
