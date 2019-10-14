@@ -118,7 +118,7 @@ function validateBulk() {
 
 function validateAll() {
   validateBulk();
-    if (validateCat() === true &&
+  if (validateCat() === true &&
     validateDesc() === true &&
     validateMin() === true &&
     validateSec() === true)
