@@ -56,7 +56,7 @@ main {
 section {
   height: 100vh;
   margin: 1px;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 section h3 {
@@ -194,7 +194,8 @@ section h3 {
   width: 100%;
 }
 
-#start-activity {
+#start-activity,
+#log-activity {
   align-self: flex-end;
   border-radius: 5px;
   color: #2b2733;
@@ -202,6 +203,10 @@ section h3 {
   font-size: 20px;
   height: 40px;
   width: 200px;
+}
+
+#log-activity {
+  align-self: center;
 }
 
 /* ********** TIMER BOX ********** */
@@ -270,6 +275,27 @@ section h3 {
   margin: 5px;
 }
 
+/* ********** ACTIVITY CARDS ********* */
+
+.activity-card {
+  background-color:  #46424D;
+  width: 90%;
+  border-radius: 5px;
+  height: 100px;
+  justify-content: center;
+}
+.card-cat {
+  font-size: 10px;
+  font-weight: bold;
+
+}
+.card-time {
+   
+
+}
+.card-desc {
+
+}
 /* ********** MEDIA QUERIES ********** */
 
 @media screen and (max-width: 500px) {
