@@ -8,11 +8,9 @@ var invalidChars = ["e", "."];
 var meditateBtn = document.querySelector('#meditate-btn');
 var minError = document.querySelector('#min-error');
 var minVal = document.querySelector('#min-val');
-var minValTwo = document.querySelector('#minValTwo');
 var newActivity = document.querySelector('#new-activity');
 var secError = document.querySelector('#sec-error');
 var secVal = document.querySelector('#sec-val');
-var secValTwo = document.querySelector('#secValTwo');
 var startActivity = document.querySelector('#start-activity');
 var startButton = document.querySelector('#start-button');
 var studyBtn = document.querySelector('#study-btn');
@@ -21,79 +19,61 @@ var timerBox = document.querySelector('#timer-box');
 var timerDesc = document.querySelector('#timer-desc');
 var timerDisplay = document.querySelector('#timer-display');
 var timerVal = document.querySelector('#timer-val');
- 
+var btnWrapper = document.querySelector('.btn-wrapper');
 
-exerciseBtn.addEventListener('click', toggleExercise);
-meditateBtn.addEventListener('click', toggleMeditate);
+var activityCards = document.querySelector('.activity-card-section');
+var logActivity = document.querySelector('#log-activity');
+var prevActivityText = document.querySelector('#prev-activity-text');
+
+
 minVal.addEventListener('keydown', charCheck);
 secVal.addEventListener('keydown', charCheck);
 startActivity.addEventListener('click', submit);
 startButton.addEventListener('click', countdown);
-studyBtn.addEventListener('click', toggleStudy);
+btnWrapper.addEventListener('click', buttonHandler);
+logActivity.addEventListener('click', createCard);
 
 
-function toggleStudy() {
-  if (studyBtn.classList.contains('study-off')) { 
-    studyBtn.classList.remove('study-off');
+
+
+function buttonHandler(event) {
+  if (event.target.innerText.includes('Study')) {
     studyBtn.classList.add('study-on');
     meditateBtn.classList.remove('meditate-on');
-    meditateBtn.classList.add('meditate-off');
     exerciseBtn.classList.remove('exercise-on');
-    exerciseBtn.classList.add('exercise-off');
+  
   }
-  else {
-    studyBtn.classList.remove('study-on');
-    studyBtn.classList.add('study-off');
-  }
-}
-
-function toggleMeditate() {
-  if (meditateBtn.classList.contains('meditate-off')) { 
-    meditateBtn.classList.remove('meditate-off');
+  if (event.target.innerText.includes('Meditate')) {
     meditateBtn.classList.add('meditate-on');
     studyBtn.classList.remove('study-on');
-    studyBtn.classList.add('study-off');
     exerciseBtn.classList.remove('exercise-on');
-    exerciseBtn.classList.add('exercise-off');
   }
-  else {
+  
+  if (event.target.innerText.includes('Exercise')) {
+    exerciseBtn.classList.add('exercise-on');
     meditateBtn.classList.remove('meditate-on');
-    meditateBtn.classList.add('meditate-off');
+    studyBtn.classList.remove('study-on');
+
   }
 }
 
-function toggleExercise() {
-  if (exerciseBtn.classList.contains('exercise-off')) { 
-    exerciseBtn.classList.remove('exercise-off');
-    exerciseBtn.classList.add('exercise-on');
-    studyBtn.classList.remove('study-on');
-    studyBtn.classList.add('study-off');
-    meditateBtn.classList.remove('meditate-on');
-    meditateBtn.classList.add('meditate-off');
-  }
-  else {
-    exerciseBtn.classList.remove('exercise-on');
-    exerciseBtn.classList.add('exercise-off');
-  }
-}
+
+
 
 function validateDesc() {
   if (descField.value === '') {
-    descError.classList.remove('hidden');
     descError.classList.add('reveal');
   } else {return true;}
 }
 
 function validateMin() {
   if (minVal.value === '') {
-    minError.classList.remove('hidden');
     minError.classList.add('reveal');
   } else {return true;}
 }
 
 function validateSec() {
   if (secVal.value === '') {
-    secError.classList.remove('hidden');
     secError.classList.add('reveal');
   } else {return true;}
 }
@@ -104,7 +84,6 @@ function validateCat() {
   exerciseBtn.classList.contains('exercise-on')) {
     return true;
   } else {
-    catError.classList.remove('hidden');
     catError.classList.add('reveal');
   }
 }
@@ -131,7 +110,6 @@ function submit() {
   if (validateAll() === true) {
   newActivity.classList.remove('reveal');
   newActivity.classList.add('hidden');
-  timerBox.classList.remove('hidden');
   timerBox.classList.add('reveal');
   timerDesc.innerText = descField.value;
   var minPres = minVal.value < 10 ? "0" + minVal.value : minVal.value;
@@ -171,9 +149,11 @@ function timerLogic() {
   timeLeft--;
   timerDisplay.innerText = timerAppearance(timeLeft);
   if (timeLeft < 0) {
-    alert("TIMER IS DONE!");
+    startButton.innerText = 'COMPLETE!'
     clearInterval(interval);
-    timerDisplay.innerText = "00:00";
+    timerDisplay.innerText = "CONGRATULATIONS!";
+    logActivity.classList.add('reveal');
+
     };
   };
 
@@ -192,4 +172,17 @@ function startButtonColor() {
   if (exerciseBtn.classList.contains('exercise-on')) {
     startButton.classList.add('start-btn-exercise');
   }
-};
+}
+
+function createCard() {
+  activityCards.insertAdjacentHTML('afterbegin',
+  `<section class="activity-card">
+    <p class="card-cat">${studyBtn.innerText}</p>
+    <p class="card-time">${minVal.value} MIN ${secVal.value} SECONDS</p>
+    <p class="card-desc">${descField.value}</p>
+  </section>`)
+  prevActivityText.remove();
+}
+
+
+
