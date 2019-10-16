@@ -20,10 +20,15 @@ var timerDesc = document.querySelector('#timer-desc');
 var timerDisplay = document.querySelector('#timer-display');
 var timerVal = document.querySelector('#timer-val');
 var btnWrapper = document.querySelector('.btn-wrapper');
-
 var activityCards = document.querySelector('.activity-card-section');
 var logActivity = document.querySelector('#log-activity');
+var prevActivity = document.querySelector('#prev-activity');
 var prevActivityText = document.querySelector('#prev-activity-text');
+var cardCategory = document.querySelector('.card-cat');
+var catButton = document.querySelector('.cat-button');
+var formReset = document.querySelector('#form-reset');
+var newActivityBtn = document.querySelector('#create-new-activity-btn');
+var formTime = document.querySelector('.form-time');
 
 
 minVal.addEventListener('keydown', charCheck);
@@ -32,6 +37,7 @@ startActivity.addEventListener('click', submit);
 startButton.addEventListener('click', countdown);
 btnWrapper.addEventListener('click', buttonHandler);
 logActivity.addEventListener('click', createCard);
+newActivityBtn.addEventListener('click', resetForm);
 
 
 
@@ -174,15 +180,36 @@ function startButtonColor() {
   }
 }
 
+function cardCategorySelector() {
+  if (studyBtn.classList.contains('study-on')) {
+    return 'study'
+  }
+  if (meditateBtn.classList.contains('meditate-on')) {
+    return 'meditate'
+  }
+  if (exerciseBtn.classList.contains('exercise-on')) {
+    return 'exercise'
+  }
+}
+
 function createCard() {
   activityCards.insertAdjacentHTML('afterbegin',
   `<section class="activity-card">
-    <p class="card-cat">${studyBtn.innerText}</p>
+    <p class="card-cat ${cardCategorySelector()}">${cardCategorySelector()}</p>
     <p class="card-time">${minVal.value} MIN ${secVal.value} SECONDS</p>
     <p class="card-desc">${descField.value}</p>
-  </section>`)
+  </section>`);
   prevActivityText.remove();
+  timerBox.classList.remove('reveal');
+  formReset.classList.add('reveal');
+  }
+
+function resetForm() {
+  formReset.classList.remove('reveal');
+  newActivity.classList.remove('hidden');
+  studyBtn.classList.remove('study-on');
+  meditateBtn.classList.remove('meditate-on');
+  exerciseBtn.classList.remove('exercise-on');
+  startButton.innerText = 'START!'
+  formTime.reset();
 }
-
-
-
