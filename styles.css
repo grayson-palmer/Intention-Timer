@@ -45,6 +45,7 @@ header {
 
 header h1 {
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 /* ********** MAIN ********** */
@@ -62,16 +63,19 @@ section {
 section h3 {
   font-size: 26px;
   padding: 14px;
+  font-weight: 400;
 }
 
 /* ********** NEW-ACTIVITY FORM ********** */
 
-#new-activity {
+#new-activity,
+#form-reset {
   background-color: #2b2733;
   width: 70%;
 }
 
-.form-time {
+.form-time,
+#create-new-activity {
   background-color: #46424D;
   box-shadow: 10px 10px 5px #26222d;
   color: #FFF;
@@ -195,7 +199,8 @@ section h3 {
 }
 
 #start-activity,
-#log-activity {
+#log-activity,
+#create-new-activity-btn {
   align-self: flex-end;
   border-radius: 5px;
   color: #2b2733;
@@ -203,6 +208,7 @@ section h3 {
   font-size: 20px;
   height: 40px;
   width: 200px;
+  margin: 20px;
 }
 
 #log-activity {
@@ -217,7 +223,7 @@ section h3 {
   justify-content: center;
   margin-top: 50px;
   padding: 100px;
-  width: 30%;
+  width: 250px;
 }
 
 .start-btn-study {
@@ -250,9 +256,13 @@ section h3 {
   width: 90%;
 }
 
+#timer-info h4 {
+  font-weight: 400;
+}
+
 #timer-display {
-  font-size: 80px;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 400;
 }
 
 
@@ -275,30 +285,86 @@ section h3 {
   margin: 5px;
 }
 
+/* ********** FORM RESET SECTION ********** */
+
+#create-new-activity {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+#create-new-activity-btn {
+  width: 300px;
+  align-self: flex-start;
+}
+
 /* ********** ACTIVITY CARDS ********* */
+
+.activity-card-section {
+  height: 650px; 
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
 
 .activity-card {
   background-color:  #46424D;
   width: 90%;
   border-radius: 5px;
-  height: 100px;
-  justify-content: center;
+  height: 80px;
+  align-self: center;
+  padding: 10px;
+  margin: 5px 0px;
 }
+
 .card-cat {
-  font-size: 10px;
-  font-weight: bold;
-
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: capitalize;
 }
-.card-time {
-   
 
+.study {
+  border-right: 5px solid #b3fd78;
 }
+
+.meditate {
+  border-right: 5px solid #c278fd;
+}
+
+.exercise {
+  border-right: 5px solid #fd8078;
+}
+
 .card-desc {
-
+  margin: 5px 0px;
 }
+
 /* ********** MEDIA QUERIES ********** */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1250px) {
+  
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  #new-activity,
+  #timer-box,
+  #form-reset,
+  #prev-activity {
+    width: 100%;
+    margin: 2px auto;
+  }
+
+  .form-time {
+    width: 80%;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
 
   main {
     display: flex;
@@ -319,11 +385,12 @@ section h3 {
 
   .btn-wrapper {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
   }
 
   .cat-button {
+    align-self: center;
     border-radius: 5px;
     display: flex;
     flex-flow: column wrap;
@@ -370,12 +437,28 @@ section h3 {
     border-radius: 7px;
   }
 
-  #start-button {
-    width: 50%;
-    padding: 35%;
-  }
-
   #prev-activity {
     width: 100%;
   }
-};
+
+  #create-new-activity {
+    padding: 60px;
+  }
+
+  #create-new-activity-btn {
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .cat-button {
+    width: 85%;
+    max-width: 225px;
+  }
+
+  #timer-display {
+    font-size: 2rem;
+  }
+
+}
