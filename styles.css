@@ -291,6 +291,7 @@ section h3 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  box-shadow: 10px 10px 5px #26222d;
 }
 
 #create-new-activity-btn {
@@ -315,6 +316,7 @@ section h3 {
   align-self: center;
   padding: 10px;
   margin: 5px 0px;
+  box-shadow: 10px 10px 5px #26222d;
 }
 
 .card-cat {
