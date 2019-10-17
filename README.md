@@ -32,7 +32,11 @@
 ## Successes and Hardships
 
 - Hardships:
-  - 
+  - Working through the timer, myself (Nick) being a bit stubborn.
+  - Managing our poms a bit better.
   
 - Wins:
-  -
+  - Getting through the timer anyway.
+  - Getting some good reps working in a team/collaborative environment.
+  - Working with and getting to know good people.
+  - Cranking out what we feel is a solid project in an efficient manner.
